@@ -1,0 +1,44 @@
+{
+  "name": "rwa-tokenization-platform",
+  "version": "1.0.0",
+  "description": "ERC-20 asset-backed token platform with ERC-4626 vault and DAO governance",
+  "private": true,
+  "scripts": {
+    "test": "forge test",
+    "test:unit": "forge test --match-path 'test/unit/*'",
+    "test:fuzz": "forge test --match-path 'test/fuzz/*'",
+    "test:invariant": "forge test --match-path 'test/invariant/*'",
+    "test:fork": "forge test --match-path 'test/fork/*'",
+    "coverage": "forge coverage --report lcov",
+    "gas-report": "FORGE_GAS_REPORT=true forge test",
+    "format": "forge fmt && prettier --write 'frontend/**/*.{js,jsx,ts,tsx}' 'docs/**/*.md'",
+    "format:check": "forge fmt --check && prettier --check 'frontend/**/*.{js,jsx,ts,tsx}'",
+    "lint": "solhint 'contracts/**/*.sol' && eslint 'frontend/**/*.{js,jsx,ts,tsx}'",
+    "slither": "slither contracts/ --json slither-report.json",
+    "deploy:arbitrum": "forge script script/Deploy.s.sol --rpc-url arbitrum_sepolia --broadcast --verify -vvv",
+    "deploy:optimism": "forge script script/Deploy.s.sol --rpc-url optimism_sepolia --broadcast --verify -vvv",
+    "deploy:base": "forge script script/Deploy.s.sol --rpc-url base_sepolia --broadcast --verify -vvv",
+    "deploy:zksync": "forge script script/Deploy.s.sol --rpc-url zksync_sepolia --broadcast --verify -vvv"
+  },
+  "devDependencies": {
+    "forge-std": "*",
+    "openzeppelin-contracts": "^5.0.0",
+    "openzeppelin-contracts-upgradeable": "^5.0.0",
+    "prettier": "^3.0.0",
+    "eslint": "^8.0.0",
+    "ethers": "^6.0.0"
+  },
+  "keywords": [
+    "blockchain",
+    "ethereum",
+    "solidity",
+    "rwa",
+    "tokenization",
+    "erc-20",
+    "erc-4626",
+    "dao",
+    "governance"
+  ],
+  "author": "",
+  "license": "MIT"
+}
